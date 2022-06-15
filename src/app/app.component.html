@@ -1,20 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      <h1 class="center"> {{ title }} </h1>
+    <div class="col d-flex justify-content-center align-items-cente">
+      <h1> {{ title }} </h1>
+    </div>
+  </div>
+  <div class="row py-4 ">
+    <div class="col d-flex justify-content-center align-items-cente">
       <h2> {{subtitle}} </h2>
     </div>
   </div>
 
   <form>
     <div class="row">
-      <div class="col d-flex justify-content-center align-items-center">
+      <div class="col col-12 col-lg-5 mb-2 d-flex justify-content-center align-items-center">
         Number 1:
         <input type="number" name="number1" [(ngModel)]="number1">
       </div>
 
-      <div class="col d-flex justify-content-center align-items-center">
-        <select type="select">
+      <div class="col col-12 col-lg-2 my-2 d-flex justify-content-center align-items-center">
+        <select type="select" #operacion>
           <option value="0" selected>+</option>
           <option value="1">-</option>
           <option value="2">*</option>
@@ -22,23 +26,21 @@
         </select>
       </div>
 
-      <div class="col d-flex justify-content-center align-items-center">
-        Number 2:
+      <div class="col col-12 col-lg-5 my-2 d-flex justify-content-center align-items-center">
+        <label>Number 2:</label>
         <input type="number" name="number2" [(ngModel)]="number2">
+      </div>
+
+      <div class="col col-12 d-flex my-4 justify-content-center">
+        <input type="number" name='answer' disabled=true placeholder=Resultado > 
+        {{answer}} 
       </div>
     </div>
 
     <div class="row">
-      <div class="col mt-3 d-flex justify-content-center">
-        <input type="submit" value="Calcular">
+      <div class="col d-flex justify-content-center">
+        <input type="submit" value="Calcular" (click) = operar(operacion.value) >
       </div>
     </div>
   </form>
-
-  <div class="row">
-    <div class="col mt-3 d-flex justify-content-center">
-      Resultado: {{answer}}
-    </div>
-  </div>
-
 </div>
