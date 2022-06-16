@@ -13,8 +13,18 @@
   <form>
     <div class="row">
       <div class="col col-12 col-lg-5 mb-2 d-flex justify-content-center align-items-center">
-        Number 1:
-        <input type="number" name="number1" [(ngModel)]="number1">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              Number 1:
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="number" name="number1" [(ngModel)]="number1">
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="col col-12 col-lg-2 my-2 d-flex justify-content-center align-items-center">
@@ -27,19 +37,28 @@
       </div>
 
       <div class="col col-12 col-lg-5 my-2 d-flex justify-content-center align-items-center">
-        <label>Number 2:</label>
-        <input type="number" name="number2" [(ngModel)]="number2">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              Number 2:
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="number" name="number2" [(ngModel)]="number2">
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="col col-12 d-flex my-4 justify-content-center">
-        <input type="number" name='answer' disabled=true placeholder=Resultado > 
-        {{answer}} 
+        <input type="number" name='answer' disabled=true placeholder={{answer}}>
       </div>
     </div>
 
     <div class="row">
       <div class="col d-flex justify-content-center">
-        <input type="submit" value="Calcular" (click) = operar(operacion.value) >
+        <input class="btn btn-primary" type="submit" value="Calcular" (click)=operar(operacion.value)>
       </div>
     </div>
   </form>
